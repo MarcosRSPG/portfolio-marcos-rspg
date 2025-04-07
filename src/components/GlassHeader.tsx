@@ -5,18 +5,18 @@ import { Menu, X, ChevronsLeft, ChevronsRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Sidebar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleCollapse = () => setIsCollapsed(!isCollapsed);
 
   const navItems = [
     { label: "Educación", icon: "🎓", link: "education" },
-    { label: "Habilidades", icon: "🛠️", link: "skills"},
-    { label: "Proyectos", icon: "🚀", link: "projects"},
-    { label: "Certificados", icon: "🏆", link: "titles"},
-    { label: "Experiencia", icon: "💼", link: "exprience"},
+    { label: "Habilidades", icon: "🛠️", link: "skills" },
+    { label: "Proyectos", icon: "🚀", link: "projects" },
+    { label: "Certificados", icon: "🏆", link: "titles" },
+    { label: "Experiencia", icon: "💼", link: "exprience" },
   ];
 
   return (
@@ -75,7 +75,7 @@ export default function Sidebar() {
       </aside>
 
       {/* Mobile Topbar + Menu */}
-      <header className="md:hidden sticky z-50 w-full backdrop-blur-md bg-background/70 border-b border-border/40 p-4 flex justify-between items-center">
+      <header className="md:hidden fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-background/70 border-b border-border/40 py-2 px-4 flex justify-between items-center">
         <motion.a
           className="text-lg font-medium"
           href="/"
@@ -93,15 +93,16 @@ export default function Sidebar() {
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {!isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
         </div>
       </header>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {isMenuOpen && (
+        {!isMenuOpen && (
           <motion.nav
-            className="md:hidden absolute top-16 left-0 w-full bg-background/90 backdrop-blur-md border-t border-border/10 p-4 flex flex-col space-y-4 z-40"
+            className="md:hidden fixed top-12 left-0 w-full bg-background/90 backdrop-blur-md border-t border-border/10 p-4 flex flex-col space-y-4 z-40"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

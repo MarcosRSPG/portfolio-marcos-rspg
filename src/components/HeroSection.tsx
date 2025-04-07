@@ -112,7 +112,12 @@ export default function HeroSection() {
                 src="/profile.jpg"
                 alt="Profile"
                 className="w-48 md:w-60 rounded-full relative ring-2 ring-blue-500/50"
-                style={{ objectFit: "cover" }}
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "calc(50% + 5px) center",
+                  transform: "rotate(5deg)",
+                  backgroundColor: "#e7e7e8"
+                }}
               />
             </div>
           </motion.div>
