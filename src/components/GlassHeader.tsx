@@ -15,7 +15,7 @@ export default function Sidebar() {
     { label: "Educación", icon: "🎓", link: "education" },
     { label: "Habilidades", icon: "🛠️", link: "skills"},
     { label: "Proyectos", icon: "🚀", link: "projects"},
-    { label: "Títulos", icon: "🏆", link: "titles"},
+    { label: "Certificados", icon: "🏆", link: "titles"},
     { label: "Experiencia", icon: "💼", link: "exprience"},
   ];
 
