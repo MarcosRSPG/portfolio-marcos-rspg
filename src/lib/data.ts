@@ -53,7 +53,7 @@ export const skills = {
 export const projects = [
   {
     title: "Proyecto con Spark y S3",
-    github: "https://github.com/MarcosRSPG/projectspark.git",
+    github: "https://github.com/MarcosRSPG/ProjectoSpark.git",
     description: [
       "ETL: Implementación del sistema de extracción, transformación y carga.",
       "Creación de datos: Desarrollo de scripts para generar datos aleatorios.",
