@@ -32,7 +32,7 @@ export default function ExprienceSection() {
               title={`👨‍💻 ${job.position} | ${job.company}`}
               subtitle={`🌍 ${job.location}`}
               date={`📅 ${job.period}`}
-              isLast={index === workexprience.length - 1}
+              isLast={index === workExperience.length - 1}
               index={index}
             >
               <motion.div

@@ -210,7 +210,7 @@ export const workExperience = [
     company: "CYTSA",
     location: "San Adrián, Navarra",
     position: "Responsable informático",
-    period: "2026",
+    period: "Feb 2026 - Jun 2026",
     achievements: [
       "Mantenimiento y soporte técnico de equipos y dispositivos informáticos.",
       "Desarrollo full stack de aplicaciones y soluciones informáticas.",
