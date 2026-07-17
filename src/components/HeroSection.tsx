@@ -1,5 +1,5 @@
-import { personalInfo } from "@/lib/data";
-import { Mail, Github, MapPin, Linkedin } from "lucide-react";
+import { personalInfo, aboutMe } from "@/lib/data";
+import { Mail, Github, MapPin, Linkedin, Phone, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 
@@ -75,6 +75,25 @@ export default function HeroSection() {
               </motion.a>
 
               <motion.a
+                href={`tel:${personalInfo.phone}`}
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                variants={childVariants}
+                whileHover={{ scale: 1.05, color: "#4b5563" }}
+              >
+                <Phone className="h-4 w-4 mr-2" />
+                📞 {personalInfo.phone}
+              </motion.a>
+
+              <motion.div
+                className="flex items-center text-sm text-muted-foreground"
+                variants={childVariants}
+                whileHover={{ scale: 1.05, color: "#4b5563" }}
+              >
+                <Clock className="h-4 w-4 mr-2" />
+                🕐 {personalInfo.availability}
+              </motion.div>
+
+              <motion.a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -127,18 +146,7 @@ export default function HeroSection() {
           <div className="bg-gradient-to-r from-blue-500/10 to--500/10 backdrop-blur-sm backdrop-filter p-4 rounded-lg border border-blue-500/20 dark:border-blue-500/10 shadow-sm">
             <p className="text-muted-foreground pl-4 py-2 mb-4 relative">
               <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to--500 rounded-full"></span>
-              🚀 Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, 
-              con especialización en Inteligencia Artificial y Big Data. 
-              Aunque cuento con una base sólida de conocimientos, me considero un 
-              profesional en constante crecimiento, siempre buscando aprender más y 
-              mejorar mis skills. Mi enfoque me permite abordar desafíos complejos y 
-              desarrollar soluciones innovadoras en diferentes plataformas, adaptándome 
-              rápidamente a nuevas tecnologías y metodologías. Combino un conocimiento 
-              técnico en constante expansión con una visión creativa para resolver problemas, 
-              siempre buscando soluciones eficientes y escalables. Impulsado por el 
-              aprendizaje continuo y el compromiso con la excelencia, disfruto tanto de 
-              trabajar de forma autónoma como de colaborar con equipos multidisciplinares para 
-              crear soluciones de alto impacto.
+              {aboutMe}
             </p>
           </div>
         </MotionWrapper>

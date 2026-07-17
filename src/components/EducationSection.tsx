@@ -20,10 +20,10 @@ export default function EducationSection() {
         <div className="mb-8">
           {education.map((edu, index) => (
             <TimelineItem
-              key={edu.institution}
+              key={edu.institution + edu.degree}
               title={`🎓 ${edu.degree}`}
               subtitle={`🏛️ ${edu.institution}`}
-              date={`📅 ${edu.period}`}
+              date={`📅 ${edu.period}${edu.status ? ` — ${edu.status}` : ""}`}
               isLast={index === education.length - 1}
               index={index}
             >
